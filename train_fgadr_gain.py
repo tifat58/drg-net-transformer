@@ -105,11 +105,11 @@ def main():
     """Basic Setting"""
     data_path = r'/mnt/sda/haal02-data/FGADR-Seg-Set/Seg-set/Original_Images'
     full_seg_path = r'/mnt/sda/haal02-data/FGADR-Seg-Set/Seg-set/Full_Segmentation'
-
-    csv_path = r'/mnt/sda/haal02-data/FGADR-Seg-Set/Seg-set/'
-
+    csv_path = r'/mnt/sda/haal02-data/FGADR-Seg-Set/Seg-set/Grading_Label.csv'
     save_model_path = r'/mnt/sda/haal02-data/results/MIL-VT_results/fgadr_new_resnet50'
-    csvName = csv_path + 'DR_Seg_Grading_Label_Combined_Renamed.csv'  ##the csv file store the path of image and corresponding label
+
+
+    csvName = csv_path  ##the csv file store the path of image and corresponding label
 
     gpu_ids = [0]
     start_epoch = 0
@@ -137,8 +137,8 @@ def main():
     ##resume training with an interrupted model
     resumeFlag = False # True of False
     resumeEpoch = 3
-    resumeModel = '/mnt/sda/haal02-data/results/MIL-VT_results/MIL_VT_small_patch16_512_20220222/MIL_VT_small_patch16_512_20220222_ep_bestmodel.pth.tar'
-
+    # resumeModel = '/mnt/sda/haal02-data/results/MIL-VT_results/MIL_VT_small_patch16_512_20220222/MIL_VT_small_patch16_512_20220222_ep_bestmodel.pth.tar'
+    resumeModel = None
     print('####################################################')
     print('Save model Path', model_save_dir)
     print('Save training record Path', tbFileName)
